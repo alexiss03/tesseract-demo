@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0eJ-ol-d60">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="AHL-It-I9p">
+            <objects>
+                <navigationController id="0eJ-ol-d60" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="H4N-YG-nvp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Z1y-yd-sgi" kind="relationship" relationship="rootViewController" id="mMz-4S-lGe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lx1-KG-iAq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-700" y="-135"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="uME-Gv-izv">
+            <objects>
+                <viewController id="Z1y-yd-sgi" customClass="ViewController" customModule="Tesseract_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KYN-IX-iEC"/>
+                        <viewControllerLayoutGuide type="bottom" id="fYa-cH-lw4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Epv-Ya-R8q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKy-xe-Thg">
+                                <rect key="frame" x="36" y="40" width="146" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="CAMERA"/>
+                                <connections>
+                                    <action selector="takeAPhoto:" destination="Z1y-yd-sgi" eventType="touchUpInside" id="jDe-Ag-4DX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVo-Yj-mBf">
+                                <rect key="frame" x="192.5" y="40" width="146.5" height="28"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                <state key="normal" title="GALLERY"/>
+                                <connections>
+                                    <action selector="uploadFromGalleryTapped:" destination="Z1y-yd-sgi" eventType="touchUpInside" id="pGs-2G-fDt"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hxq-v4-rt5">
+                                <rect key="frame" x="16" y="447" width="343" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="kno-aM-QNZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MTK-OC-wAz">
+                                <rect key="frame" x="36" y="88" width="303" height="339"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CVo-Yj-mBf" firstAttribute="width" secondItem="bKy-xe-Thg" secondAttribute="width" id="1JL-ZJ-DGb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CVo-Yj-mBf" secondAttribute="trailing" constant="20" id="38c-Fk-hz4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hxq-v4-rt5" secondAttribute="trailing" id="7IO-Up-OgL"/>
+                            <constraint firstItem="CVo-Yj-mBf" firstAttribute="leading" secondItem="bKy-xe-Thg" secondAttribute="trailing" constant="10" id="894-Vp-UcO"/>
+                            <constraint firstItem="bKy-xe-Thg" firstAttribute="top" secondItem="KYN-IX-iEC" secondAttribute="bottom" constant="20" id="AET-oV-TlX"/>
+                            <constraint firstItem="hxq-v4-rt5" firstAttribute="leading" secondItem="Epv-Ya-R8q" secondAttribute="leadingMargin" id="Fkm-oW-cUQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MTK-OC-wAz" secondAttribute="trailing" constant="20" id="UxT-GP-5a4"/>
+                            <constraint firstItem="hxq-v4-rt5" firstAttribute="top" secondItem="MTK-OC-wAz" secondAttribute="bottom" constant="20" id="cBS-Rj-urU"/>
+                            <constraint firstItem="fYa-cH-lw4" firstAttribute="top" secondItem="hxq-v4-rt5" secondAttribute="bottom" constant="20" id="fnf-2D-kYt"/>
+                            <constraint firstItem="MTK-OC-wAz" firstAttribute="top" secondItem="CVo-Yj-mBf" secondAttribute="bottom" constant="20" id="hzQ-S4-Yg9"/>
+                            <constraint firstItem="bKy-xe-Thg" firstAttribute="leading" secondItem="Epv-Ya-R8q" secondAttribute="leadingMargin" constant="20" id="ka5-KS-Nea"/>
+                            <constraint firstItem="MTK-OC-wAz" firstAttribute="leading" secondItem="Epv-Ya-R8q" secondAttribute="leadingMargin" constant="20" id="lia-PL-IW5"/>
+                            <constraint firstItem="bKy-xe-Thg" firstAttribute="centerY" secondItem="CVo-Yj-mBf" secondAttribute="centerY" id="tjg-yX-ofm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bDw-dp-afg"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="MTK-OC-wAz" id="eHM-fz-HdQ"/>
+                        <outlet property="recognizedTextView" destination="hxq-v4-rt5" id="fDB-6U-LXe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pm2-e9-h7C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="-135.38230884557723"/>
+        </scene>
+    </scenes>
+</document>
